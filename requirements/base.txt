@@ -1,4 +1,7 @@
 aiofiles==0.6.0
+cryptography==3.4.7
 fastapi==0.63.0
 Jinja2==2.11.3
+motor==2.3.1
+pydantic[email]==1.8.1
 uvicorn==0.13.4

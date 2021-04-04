@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  app:
+    image: owtest:test
+    build:
+      context: .
+      args:
+        req: dev
+    command: /app/scripts/test.sh
+    depends_on:
+      - mongo
+    environment:
+      SECRET_KEY: MVmAllvvZFTjCl372Hl_iWOMyycrKbJXnaYhFSU19qQ=
+      MONGO_URL: mongodb://mongo/test
+      TESTING: 1
+  mongo:
+    image: mongo:4-bionic

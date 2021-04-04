@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  app:
+    image: owtest:latest
+    build:
+      context: .
+      args:
+        req: base
+    command: /app/scripts/run.sh
+    depends_on:
+      - mongo
+    environment:
+      SECRET_KEY: MVmAllvvZFTjCl372Hl_iWOMyycrKbJXnaYhFSU19qQ=
+      MONGO_URL: mongodb://mongo/owtest
+    ports:
+      - 8000:8000
+  mongo:
+    image: mongo:4-bionic
